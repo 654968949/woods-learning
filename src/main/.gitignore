@@ -1,0 +1,14 @@
+*.classpath
+/*.project
+/.settings
+/config/*.project
+/config/.settings
+*/.project
+*.settings
+*/.settings/
+*/target/
+/.idea
+*.iml
+/*.iml
+*/*.iml
+*.md5
