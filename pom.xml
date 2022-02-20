@@ -6,10 +6,11 @@
 
     <groupId>org.wyz</groupId>
     <artifactId>woods-learning</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-
-
-
+    <modules>
+        <module>design-pattern</module>
+    </modules>
 
 
 </project>
