@@ -19,6 +19,8 @@ public class Test {
         //工厂模式加策略模式
         PromotionStrategyFactory factory = new PromotionStrategyFactory();
         IPromotionStrategy promotionStrategy = factory.getPromotionStrategy(PromotionKey.CASH_BACK);
+        IPromotionStrategy promotionStrategyByClass = factory.getPromotionStrategyByClass(CashBackStrategy.class);
         promotionStrategy.doPromotion();
+        promotionStrategyByClass.doPromotion();
     }
 }

@@ -25,9 +25,26 @@ public class PromotionStrategyFactory {
         STRATEGY_MAP.put(PromotionKey.COUPONS, new CouponsStrategy());
     }
 
-
+    /**
+     * 你要什么, 我这个工厂就给你new好的实例
+     */
     public IPromotionStrategy getPromotionStrategy(String promotionKey) {
        return Objects.isNull(promotionKey) ? STRATEGY_MAP.get(PromotionKey.EMPTY) : STRATEGY_MAP.get(promotionKey);
+    }
+
+    /**
+     * 这种方式对于创建型的工厂模式, 不太合适, 既然你都知道要用 xxx.class的字节码类了.
+     * 那为何还要用什么工厂模式, 多次一举, 在这个factory里面new实例呢? 直接new不就好了.
+     * 所以说用我们上面的getPromotionStrategy方法才更合理
+     */
+    public  IPromotionStrategy getPromotionStrategyByClass(Class<? extends IPromotionStrategy> clazz) {
+        IPromotionStrategy obj = null;
+        try {
+            obj = (IPromotionStrategy) Class.forName(clazz.getName()).newInstance();
+        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return obj;
     }
 
     public Set<String> getKeys() {

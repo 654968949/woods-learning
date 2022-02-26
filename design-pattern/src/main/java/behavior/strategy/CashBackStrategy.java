@@ -8,6 +8,7 @@ package behavior.strategy;
  * @Version ：1.0
  */
 public class CashBackStrategy implements IPromotionStrategy {
+    @Override
     public void doPromotion() {
         System.out.println("返现抵扣");
     }
