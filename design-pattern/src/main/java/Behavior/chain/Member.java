@@ -3,7 +3,7 @@ package Behavior.chain;
 /**
  *
  * @author : Woods
- * @ClassName : Menber
+ * @ClassName : Member
  * @date : 2022/2/27  9:49 下午
  * @Version ：1.0
  */
@@ -16,6 +16,12 @@ public class Member {
     public Member(String loginName, String loginPass) {
         this.loginName = loginName;
         this.loginPass = loginPass;
+    }
+
+    public Member(String loginName, String loginPass, String roleName) {
+        this.loginName = loginName;
+        this.loginPass = loginPass;
+        this.roleName = roleName;
     }
 
     public String getLoginName() {

@@ -4,6 +4,7 @@ package Structural.Adpter.demo.power.objectadapter;
  * 适配器接口内部持有原来的类实例, 然后在适配器类里面改变原来的方法逻辑 兼容适配
  */
 public class PowerAdapter implements DC5 {
+    //内部持有原来的类实例
     private AC220 ac220;
 
     public PowerAdapter(AC220 ac220) {

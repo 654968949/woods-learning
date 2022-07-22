@@ -32,6 +32,7 @@ public abstract class Handler<T> {
      * @param <T>
      */
     public static class Builder<T> {
+        //存链的头和尾
         private Handler<T> head;
         private Handler<T> tail;
 
@@ -41,8 +42,9 @@ public abstract class Handler<T> {
                 this.head = this.tail = handler;
                 return this;
             }
-            //如果是有头的话,
+            //如果是有头的话, 就指明当前尾的下一个元素
             this.tail.setNext(handler);
+            //并指明把Builder里面的尾变成当前元素
             this.tail = handler;
             return this;
         }

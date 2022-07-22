@@ -10,7 +10,16 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>design-pattern</module>
+        <module>arithmetic</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.76</version>
+        </dependency>
+    </dependencies>
 
 
 </project>

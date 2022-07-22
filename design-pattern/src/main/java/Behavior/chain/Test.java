@@ -14,7 +14,7 @@ public class Test {
         Handler validateHandler = new ValidateHandler();
         Handler loginHandler = new LoginHandler();
         Handler authHandler = new AuthHandler();
-
+        //构建责任链的顺序
         validateHandler.setNext(loginHandler);
         loginHandler.setNext(authHandler);
         //validateHandler.doHandler(new Member("管理员", "123"));
@@ -24,7 +24,7 @@ public class Test {
                 .addHandler(new LoginHandler())
                 .addHandler(new AuthHandler())
                 .builder()
-                .doHandler(new Member("管理员", "123") );
+                .doHandler(new Member("woods", "123", "管理员") );
 
     }
 }
