@@ -1,4 +1,7 @@
-package Structural.Bridge.message;
+package Structural.Bridge.message.UrgencyLevel;
+
+import Structural.Bridge.message.AbstractMessage;
+import Structural.Bridge.message.IMessage;
 
 /**
  * @author : Woods
@@ -11,7 +14,8 @@ public class NormalMessage extends AbstractMessage {
         super(message);
     }
 
-    void sendMessage(String message, String toUser) {
+    @Override
+    public void sendMessage(String message, String toUser) {
         super.sendMessage(message, toUser);
     }
 

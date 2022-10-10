@@ -1,4 +1,6 @@
-package Structural.Bridge.message;
+package Structural.Bridge.message.MessageType;
+
+import Structural.Bridge.message.IMessage;
 
 /**
  * @author : Woods

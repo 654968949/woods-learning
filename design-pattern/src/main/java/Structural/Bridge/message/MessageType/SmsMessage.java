@@ -1,4 +1,6 @@
-package Structural.Bridge.message;
+package Structural.Bridge.message.MessageType;
+
+import Structural.Bridge.message.IMessage;
 
 /**
  * 消息紧急程度的维度

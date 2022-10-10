@@ -1,4 +1,4 @@
-package Structural.Adapter.general.classadapter;
+package Structural.Adapter.general.classAdapter;
 
 /**
  * Created by Tom.

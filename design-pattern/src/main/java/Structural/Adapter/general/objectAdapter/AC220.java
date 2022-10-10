@@ -1,9 +1,9 @@
-package Structural.Adapter.general.interfaceadapter;
+package Structural.Adapter.general.objectAdapter;
 
 /**
  * Created by Tom.
  */
-public class Adaptee {
+public class AC220 {
 
     public int specificRequest() {
         return 220;

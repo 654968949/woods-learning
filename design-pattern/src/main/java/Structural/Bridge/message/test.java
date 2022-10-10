@@ -1,5 +1,10 @@
 package Structural.Bridge.message;
 
+import Structural.Bridge.message.MessageType.EmailMessage;
+import Structural.Bridge.message.MessageType.SmsMessage;
+import Structural.Bridge.message.UrgencyLevel.NormalMessage;
+import Structural.Bridge.message.UrgencyLevel.UrgencyMessage;
+
 /**
  * @author : Woods
  * @ClassName : test

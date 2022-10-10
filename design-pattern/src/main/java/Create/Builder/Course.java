@@ -64,29 +64,29 @@ public class Course {
         //内部类里面就对这个空的对象进行建造
         Course course = new Course();
 
-        Builder addName(String name) {
+        public Builder addName(String name) {
             course.setName(name);
             return this;
         }
-        Builder addPPt(String ppt) {
+        public Builder addPPt(String ppt) {
             course.setPpt(ppt);
             return this;
         }
-        Builder addVideo(String video) {
+        public Builder addVideo(String video) {
             course.setVideo(video);
             return this;
         }
-        Builder addNote(String note) {
+        public Builder addNote(String note) {
             course.setNote(note);
             return this;
         }
-        Builder addHomework(String homework) {
+        public Builder addHomework(String homework) {
             course.setHomework(homework);
             return this;
         }
 
         //建造完成之后调用这个方法返回对象
-        Course build() {
+        public Course build() {
             return course;
         }
     }
