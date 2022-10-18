@@ -9,7 +9,7 @@ package Create.FactoryMethod;
 public class Client {
     public static void main(String[] args) {
         /*
-            简单工厂模式把生产对象的工厂也抽象了, 每种产品用不同的产品工厂,
+            工厂方法模式把生产对象的工厂也抽象了, 每种产品用不同的产品工厂,
             更符合单一职责原则
             缺点:
             FactoryA,FactoryB,FactoryC只能生产一种产品
