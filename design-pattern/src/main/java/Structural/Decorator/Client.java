@@ -12,7 +12,7 @@ import java.util.Arrays;
  */
 public class Client {
     public static void main(String[] args) {
-        /**
+        /*
          * 装饰器模式在代码程序中适用于以下应用场景。
          * （1）用于扩展一个类的功能，或者给一个类添加附加职责。
          * （2）动态地给一个对象添加功能，这些功能可以再动态地被撤销。
