@@ -17,6 +17,6 @@ public class ValidateHandler extends Handler {
             return;
         }
         System.out.println("用户名密码校验成功,可以往下执行");
-        chain.doHandler(member);
+        super.chainNext.doHandler(member);
     }
 }

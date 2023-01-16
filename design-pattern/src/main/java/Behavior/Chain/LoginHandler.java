@@ -15,7 +15,7 @@ public class LoginHandler extends Handler {
             return;
         }
         System.out.println("登录成功！");
-        chain.doHandler(member);
+        super.chainNext.doHandler(member);
     }
 
     private Member checkExists(String loginName,String loginPass){

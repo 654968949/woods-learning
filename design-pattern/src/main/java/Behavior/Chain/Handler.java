@@ -7,14 +7,18 @@ package Behavior.Chain;
  * @Version ：1.0
  */
 public abstract class Handler<T> {
-    protected Handler<T> chain;
 
     /**
-     * 指明下一个验证条件是什么
+     * 下一个元素
+     */
+    protected Handler<T> chainNext;
+
+    /**
+     * 指明链的下一个元素
      * @param handler 验证条件
      */
-    void setNext(Handler<T> handler) {
-        this.chain = handler;
+    void setChainNext(Handler<T> handler) {
+        this.chainNext = handler;
     }
 
     /**
@@ -32,19 +36,24 @@ public abstract class Handler<T> {
      * @param <T>
      */
     public static class Builder<T> {
-        //存链的头和尾
+        //Handler元素的头
         private Handler<T> head;
+        //Handler元素的尾
         private Handler<T> tail;
 
+        /**
+         * 构建链的核心方法
+         * @param handler 链中的元素
+         * @return 包装链的Builder
+         */
         public Builder<T> addHandler(Handler<T> handler) {
-            //如果还没有头, 就让该handler作为头和尾,
+            //如果还没有头, 证明是添加的是第一个元素, 就让该handler作为头和尾,
             if (this.head == null) {
                 this.head = this.tail = handler;
-                return this;
             }
-            //如果是有头的话, 就指明当前尾的下一个元素
-            this.tail.setNext(handler);
-            //并指明把Builder里面的尾变成当前元素
+            //操作上一个元素, 使的从上一个元素可以知晓下一个元素是哪个(这里重点理解)
+            this.tail.setChainNext(handler);
+            //尾部元素重新为此(这里重点理解)
             this.tail = handler;
             return this;
         }
