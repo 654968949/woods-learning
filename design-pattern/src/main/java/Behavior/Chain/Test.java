@@ -1,5 +1,8 @@
 package Behavior.Chain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author : Woods
  * @ClassName : Test
@@ -9,11 +12,12 @@ package Behavior.Chain;
 public class Test {
     public static void main(String[] args) {
 
-        Handler.Builder builder = new Handler.Builder();
-        builder.addHandler(new ValidateHandler())
-                .addHandler(new LoginHandler())
-                .addHandler(new AuthHandler())
-                .builder()
-                .doHandler(new Member("woods", "123", "管理员1"));
+      new Handler.Builder()
+          .addHandler(new ValidateHandler())
+          .addHandler(new LoginHandler())
+          .addHandler(new AuthHandler())
+          .getChainHead()
+          //从链头开始执行校验
+          .doHandler(new Member("woods", "123", "管理员"));
     }
 }

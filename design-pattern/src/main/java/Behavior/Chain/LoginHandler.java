@@ -19,6 +19,9 @@ public class LoginHandler extends Handler {
     }
 
     private Member checkExists(String loginName,String loginPass){
+        if (!loginPass.equals("123")) {
+            return null;
+        }
         Member member = new Member(loginName,loginPass);
         member.setRoleName("管理员");
         return member;
