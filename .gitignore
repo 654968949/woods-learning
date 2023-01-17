@@ -12,3 +12,6 @@
 /*.iml
 */*.iml
 *.md5
+/target/checkstyle-result.xml
+/target/checkstyle-checker.xml
+/target/checkstyle-cachefile
