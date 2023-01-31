@@ -26,7 +26,7 @@ public abstract class Template {
 
 
   /**
-   * 子类重写改方法
+   * 子类重写该方法
    */
   protected abstract void doTask();
 }
