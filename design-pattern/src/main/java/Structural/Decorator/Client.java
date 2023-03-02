@@ -19,18 +19,22 @@ public class Client {
          * （3）需要为一批平行的兄弟类进行改装或加装功能
          * 优点：装饰类和被装饰类可以独立发展，不会相互耦合，装饰模式是继承的一个替代模式，装饰模式可以动态扩展一个实现类的功能
          * 缺点：多层装饰会显得很复杂
-         * 我其实一开始就在想，到底怎么样设计，才能给一个类动态的添加某些功能，并且完全不会影响到该类之前的功能，
-         * 我想了一种：一个类的功能想要增加，就另写一个类B，在这个类B里面写功能，然后原来的类注入这个类B，那么原来的类功能就被扩展了
+         * 我其实一开始就在想，到底怎么样设计，才能给一个类动态的添加某些功能，并且完全不会影响到该类之前的功能
          * 想一个例子：多功能步枪 rifle，原始功能：射击步枪子弹
          * 扩展一：榴弹炮 howitzers
          * 扩展二：夜视仪 Night-vision goggles
          * 扩展三：红外瞄准器 Infrared sight
+         * 装备了什么东西就有什么东西
+         *
+         * 如何做到对象嵌套对象的呢?
          */
-        Rifle rifle = new RifleDecorate(new Howitzers());
+        //原始对象Rifle
+        Rifle rifle = new OriginRifle();
+        //Howitzers是RifleDecorate的子类, 而RifleDecorate又是Rifle的实现类
+        rifle = new Howitzers(rifle);
+        rifle = new InfraredSight(rifle);
+        rifle = new NightVisionGoggles(rifle);
         rifle.equipmentLoading();
-        rifle = new RifleDecorate(new InfraredSight());
-        rifle.equipmentLoading();
-        rifle = new RifleDecorate(new NightVisionGoggles());
-        rifle.equipmentLoading();
+
     }
 }

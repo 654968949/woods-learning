@@ -10,10 +10,10 @@ package Structural.Decorator;
  * @date : 2022/10/18  1:58 PM
  * @Version ：1.0
  */
-public abstract class Rifle {
+public interface Rifle {
 
     /**
-     * 装备装载方法，留给被修饰类实现
+     * 装备装载方法
      */
-    abstract void equipmentLoading();
+     void equipmentLoading();
 }
