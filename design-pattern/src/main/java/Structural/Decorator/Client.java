@@ -27,6 +27,8 @@ public class Client {
          * 装备了什么东西就有什么东西
          *
          * 如何做到对象嵌套对象的呢?
+         * RifleDecorate类内部持有Rifle引用, 就会一级一级的嵌套了
+         *
          */
         //原始对象Rifle
         Rifle rifle = new OriginRifle();
