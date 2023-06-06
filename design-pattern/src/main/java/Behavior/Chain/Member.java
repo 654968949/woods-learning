@@ -1,7 +1,7 @@
 package Behavior.Chain;
 
 /**
- *
+ * 责任链最开始的传入的参数
  * @author : Woods
  * @ClassName : Member
  * @date : 2022/2/27  9:49 下午
