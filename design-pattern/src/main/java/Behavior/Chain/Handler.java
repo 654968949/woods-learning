@@ -11,6 +11,7 @@ public abstract class Handler {
 
     /**
      * 下一个元素
+     * protected表明只能在此类里面,或者子类里面访问到chainNext
      */
     protected Handler chainNext;
 

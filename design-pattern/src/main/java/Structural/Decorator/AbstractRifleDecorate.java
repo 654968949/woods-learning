@@ -8,15 +8,18 @@ package Structural.Decorator;
  * @date : 2022/10/18  2:07 PM
  * @Version ：1.0
  */
-public abstract class RifleDecorate implements Rifle{
+public abstract class AbstractRifleDecorate extends Rifle{
+
+    //静态代理，委派
     private Rifle rifle;
 
-    public RifleDecorate(Rifle rifle) {
+    //抽象类的构造方法
+    public AbstractRifleDecorate(Rifle rifle) {
         this.rifle = rifle;
     }
 
     @Override
-    public void equipmentLoading() {
-        rifle.equipmentLoading();
+    public void operation() {
+        rifle.operation();
     }
 }

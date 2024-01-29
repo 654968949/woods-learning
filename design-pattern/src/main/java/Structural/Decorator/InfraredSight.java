@@ -8,17 +8,15 @@ package Structural.Decorator;
  * @date : 2022/10/18  2:19 PM
  * @Version ：1.0
  */
-public class InfraredSight extends RifleDecorate {
-
-    protected Rifle rifle;
+public class InfraredSight extends AbstractRifleDecorate {
 
     public InfraredSight(Rifle rifle) {
         super(rifle);
     }
 
     @Override
-    public void equipmentLoading() {
+    public void operation() {
         System.out.println("步枪已装备红外瞄准器！");
-        super.equipmentLoading();
+        super.operation();
     }
 }

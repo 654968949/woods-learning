@@ -1,8 +1,9 @@
 package Structural.Decorator;
 
 
-import java.io.*;
-import java.util.Arrays;
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.InputStream;
 
 /**
  * @author : Woods
@@ -30,13 +31,16 @@ public class Client {
          * RifleDecorate类内部持有Rifle引用, 就会一级一级的嵌套了
          *
          */
-        //原始对象Rifle
-        Rifle rifle = new OriginRifle();
-        //Howitzers是RifleDecorate的子类, 而RifleDecorate又是Rifle的实现类
+        //步枪抽象类 BaseRifle基本的步枪
+        //发射子弹的功能
+        Rifle rifle = new BaseRifle();
+        //榴弹炮
         rifle = new Howitzers(rifle);
+        //红外瞄准
         rifle = new InfraredSight(rifle);
+        //夜视仪
         rifle = new NightVisionGoggles(rifle);
-        rifle.equipmentLoading();
-
+        //功能准备完毕，可以触发
+        rifle.operation();
     }
 }
