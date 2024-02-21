@@ -3,6 +3,7 @@ package Structural.Decorator;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 
 /**
@@ -35,12 +36,13 @@ public class Client {
         //发射子弹的功能
         Rifle rifle = new BaseRifle();
         //榴弹炮
-        rifle = new Howitzers(rifle);
+        Rifle rifleA = new Howitzers(rifle);
         //红外瞄准
-        rifle = new InfraredSight(rifle);
+        Rifle rifleB = new InfraredSight(rifleA);
         //夜视仪
-        rifle = new NightVisionGoggles(rifle);
+        Rifle rifleC = new NightVisionGoggles(rifleB);
         //功能准备完毕，可以触发
-        rifle.operation();
+        rifleC.operation();
+
     }
 }
